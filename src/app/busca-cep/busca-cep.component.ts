@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { ThrowStmt } from '@angular/compiler';
+import { CEP } from '../model/cep';
+
+
+
+
 
 @Component({
   selector: 'has-busca-cep',
@@ -7,9 +14,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscaCepComponent implements OnInit {
 
-  constructor() { }
+  cepForm: FormGroup;
+  cep: CEP;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+
+    this.cepForm = this.formBuilder.group({
+        cep : this.formBuilder.control('')
+    })
+    
+  }
+
+  onConsultar() {
+
+    let cep : string = this.cepForm.value.cep;
+
+    alert(cep);
   }
 
 }

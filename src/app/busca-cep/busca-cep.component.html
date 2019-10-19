@@ -7,7 +7,7 @@
 
      <div class="panel-body">
         <div class="col-lg-12">
-          <form [formGroup]='cepForm' (ngSubmit)="onConsultar()">
+          <form [formGroup]="cepForm" (ngSubmit)="onConsultar()">
             <div class="col-lg-3 form-group">
               
               <div class="col-lg-12 form-group">
@@ -18,10 +18,7 @@
                        maxlength="9" 
                        class="form-control"
                        formControlName="cep"
-                       placeholder="CEP"/>
-                  <div *ngIf="submitted && f.cep.errors" class="invalid-feedback">
-                    <div *ngIf="f.cep.errors.required">CEP é obrigatório</div>
-                  </div>
+                       placeholder="CEP"/>                  
               </div>
 
               <div class="col-lg-12 form-group">
